@@ -3,8 +3,6 @@ package main
 import (
 	"context"
 	"errors"
-	"github.com/gin-contrib/cors"
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"os/signal"
@@ -16,6 +14,9 @@ import (
 	"wejh-go/config/database"
 	"wejh-go/config/router"
 	"wejh-go/config/session"
+
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -34,7 +35,7 @@ func main() {
 	var wg sync.WaitGroup
 
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":10108",
 		Handler: r,
 	}
 
